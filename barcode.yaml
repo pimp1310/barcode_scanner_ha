@@ -2,8 +2,7 @@ substitutions:
   name: "barcode-scanner"
   friendly_name: "Barcode Scanner"
 
-  # Query ID für opentindb (https://opengtindb.org/api.php)
-  rest_opentindb_queryid: "400000000"
+
 
   # I2C-Pins fürs Display
   display_i2c_sda: GPIO21
