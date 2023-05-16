@@ -139,7 +139,7 @@ i2c:
 
 display:
   - platform: ssd1306_i2c
-    model: "SSD1306 128x64"
+    model: "SH1106 128x64"
     address: "${ssd1306_i2c_address}"
     update_interval: 250ms
     lambda: |-
