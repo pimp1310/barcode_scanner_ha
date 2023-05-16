@@ -20,4 +20,4 @@ substitutions:
   beeper_pin: GPIO16
 
 packages:
-  barcode: github://SmartHome-yourself/barcode-scanner-for-esphome/barcode.yaml@main
+  barcode: github://pimp1310/barcode_scanner_ha/barcode.yaml@main
