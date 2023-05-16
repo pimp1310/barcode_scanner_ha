@@ -1,7 +1,10 @@
 substitutions:
   name: "barcode-scanner-2e8e6c"
 
-
+  # Query ID für opentindb (https://opengtindb.org/api.php)
+  rest_opentindb_queryid: "400000000"
+  
+  
   # I2C-Pins fürs Display
   display_i2c_sda: GPIO21
   display_i2c_scl: GPIO22
