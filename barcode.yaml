@@ -250,7 +250,7 @@ script:
 
       - delay: 10s
       - script.execute: clearProductData
-      - lambda: id(last_ean).publish_state("Scan Barcode");
+      - lambda: id(last_ean).publish_state("Barcode Scannen");
 
 
   - id: clearProductData
