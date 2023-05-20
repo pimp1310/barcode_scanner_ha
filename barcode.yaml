@@ -229,9 +229,8 @@ script:
             - script.execute: 
                 id: refreshProductNameOpenTin
                 ean: !lambda return ean.c_str();
-#             - lambda: id(last_ean).publish_state("Nichts Gefunden...");
-             - lambda: |-
-                 ESP_LOGD("getEanData", "OpenTinDb result: %s\n", id(last_product).state.c_str());
+            - lambda: |-
+                ESP_LOGD("getEanData", "OpenTinDb result: %s\n", id(last_product).state.c_str());
                 
 
       - if:
