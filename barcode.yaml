@@ -4,8 +4,6 @@ substitutions:
   # Query ID für opentindb (https://opengtindb.org/api.php)
   rest_opentindb_queryid: "400000000"
 
-
-
   # I2C-Pins fürs Display
   display_i2c_sda: GPIO21
   display_i2c_scl: GPIO22
@@ -174,6 +172,18 @@ display:
       }
 
 switch:
+  - platform: gpio
+    pin: D5
+    name: "${friendly_name} LED Rot"
+    id: led_red
+  - platform: gpio
+    pin: D6
+    name: "${friendly_name} LED Gruen"
+    id: led_green
+  - platform: gpio
+    pin: D7
+    name: "${friendly_name} LED Blau"
+    id: led_blue
   - platform: gpio
     name: "${friendly_name} Buzzer"
     pin: "${beeper_pin}"
