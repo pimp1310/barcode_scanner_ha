@@ -249,14 +249,17 @@ script:
               id: last_product
               state: 'null'
           then:
+              - switch.turn_on: led_red
               - switch.turn_on: beeper
               - delay: 800ms
               - switch.turn_off: beeper
+              - switch.turn_off: led_red
           else:
+              - switch.turn_on: led_green
               - switch.turn_on: beeper
               - delay: 50ms
               - switch.turn_off: beeper
-
+              - switch.turn_off: led_green
       - delay: 10s
       - script.execute: clearProductData
       - lambda: id(last_ean).publish_state("Barcode Scannen");
