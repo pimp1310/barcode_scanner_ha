@@ -170,20 +170,30 @@ display:
       } else {
         id(xpos_prod) = 0;
       }
-
-switch:
-  - platform: gpio
+      
+# https://esphome.io/components/output/ledc.html
+output:
+  - platform: ledc
+    id: red_output
     pin: GPIO27
-    name: "${friendly_name} LED Rot"
-    id: led_red
-  - platform: gpio
+  - platform: ledc
+    id: green_output
     pin: GPIO25
-    name: "${friendly_name} LED Gruen"
-    id: led_green
-  - platform: gpio
+  - platform: ledc
+    id: blue_output
     pin: GPIO32
-    name: "${friendly_name} LED Blau"
-    id: led_blue
+ 
+    
+light:
+  - platform: rgbww
+    name: "${friendly_name}"
+    red: red_output
+    green: green_output
+    blue: blue_output
+    color_interlock: true
+    
+    
+switch:
   - platform: gpio
     name: "${friendly_name} Buzzer"
     pin: "${beeper_pin}"
