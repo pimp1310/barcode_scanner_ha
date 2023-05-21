@@ -173,15 +173,15 @@ display:
 
 switch:
   - platform: gpio
-    pin: D5
+    pin: GPIO27
     name: "${friendly_name} LED Rot"
     id: led_red
   - platform: gpio
-    pin: D6
+    pin: GPIO25
     name: "${friendly_name} LED Gruen"
     id: led_green
   - platform: gpio
-    pin: D7
+    pin: GPIO32
     name: "${friendly_name} LED Blau"
     id: led_blue
   - platform: gpio
