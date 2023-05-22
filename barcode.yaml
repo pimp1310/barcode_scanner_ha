@@ -35,9 +35,11 @@ esphome:
     then:
       - light.turn_on:
         id: green
-      - lambda: id(last_ean).publish_state("Barcode Scannen");
+      - delay: 500ms 
       - light.turn_off:
-        id: green                                     
+        id: green  
+      - lambda: id(last_ean).publish_state("Barcode Scannen");
+                                         
 dashboard_import:
   package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@main
   import_full_config: false
