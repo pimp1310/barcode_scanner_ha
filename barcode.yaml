@@ -197,6 +197,8 @@ light:
     green: green_output
     blue: blue_output
     color_interlock: true
+    cold_white_color_temperature: 6000 K
+    warm_white_color_temperature: 3000 K
     
     
 switch:
