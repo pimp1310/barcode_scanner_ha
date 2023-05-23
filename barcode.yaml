@@ -260,6 +260,9 @@ script:
                   id: last_product
                   state: ''
           then:
+            - output.turn_on: red_output
+            - delay: 800ms
+            - output.turn_off: red_output
             - script.execute: 
                 id: refreshProductNameOpenTin
                 ean: !lambda return ean.c_str();
