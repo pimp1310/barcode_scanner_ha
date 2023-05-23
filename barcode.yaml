@@ -262,9 +262,11 @@ script:
               - switch.turn_off: beeper
               - output.turn_off: red_output
           else:
+              - output.turn_on: green_output
               - switch.turn_on: beeper
               - delay: 50ms
               - switch.turn_off: beeper
+              - output.turn_off: green_output
       - delay: 10s
       - script.execute: clearProductData
       - lambda: id(last_ean).publish_state("Barcode Scannen");
