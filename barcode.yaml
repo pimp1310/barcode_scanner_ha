@@ -188,7 +188,15 @@ output:
   - platform: ledc
     id: blue_output
     pin: GPIO32
- 
+#### DUMMY
+  - platform: ledc
+    id: warm_white_output
+    pin: GPIO2
+    max_power: 0.90
+  - platform: ledc
+    id: white_output
+    pin: GPIO4
+    max_power: 0.90
     
 light:
   - platform: rgbww
@@ -197,9 +205,10 @@ light:
     green: green_output
     blue: blue_output
     color_interlock: true
+    warm_white: warm_white_output
+    cold_white: white_output
     cold_white_color_temperature: 6000 K
     warm_white_color_temperature: 3000 K
-    
     
 switch:
   - platform: gpio
