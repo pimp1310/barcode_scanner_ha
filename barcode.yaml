@@ -33,9 +33,9 @@ esphome:
     version: "1.0"
   on_boot:
     then:
-      - light.turn_on: green
+      - output.turn_on: green_output
       - delay: 500ms 
-      - light.turn_off: green
+      - output.turn_off: green_output
       - lambda: id(last_ean).publish_state("Barcode Scannen");
                                          
 dashboard_import:
