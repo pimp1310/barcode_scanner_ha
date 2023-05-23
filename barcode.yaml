@@ -34,11 +34,11 @@ esphome:
   on_boot:
     then:
       - light.turn_on:
-          id: green
+          id: green_output
           brightness: 100%
       - delay: 500ms 
       - light.turn_off:
-          id: green  
+          id: green_output  
       - lambda: id(last_ean).publish_state("Barcode Scannen");
                                          
 dashboard_import:
