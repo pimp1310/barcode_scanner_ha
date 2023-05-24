@@ -34,8 +34,8 @@ esphome:
   on_boot:
     then:
 # Beim Booten LED auf Gruen AN und dann wieder Aus
-      - output.turn_on: green_output
-      - lambda: id(last_ean).publish_state("bereit....");
+      - output.turn_on: green_output        
+      - lambda: id(last_ean).publish_state("Code Scannen..");
       - output.turn_off: green_output
                                          
 dashboard_import:
@@ -272,7 +272,7 @@ script:
               - output.turn_off: green_output
       - delay: 10s
       - script.execute: clearProductData
-      - lambda: id(last_ean).publish_state("bereit....");
+      - lambda: id(last_ean).publish_state("Code Scannen..");
 
 
   - id: clearProductData
