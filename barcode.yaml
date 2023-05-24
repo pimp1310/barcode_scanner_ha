@@ -33,6 +33,7 @@ esphome:
     version: "1.0"
   on_boot:
     then:
+# Beim Booten LED auf Gruen AN und dann wieder Aus
       - output.turn_on: green_output
       - lambda: id(last_ean).publish_state("bereit....");
       - output.turn_off: green_output
@@ -256,12 +257,14 @@ script:
               id: last_product
               state: 'null'
           then:
+# EAN NICHT GEFUNDEN LED ROT AN UND WIEDER AUS
               - output.turn_on: red_output
               - switch.turn_on: beeper
               - delay: 800ms
               - switch.turn_off: beeper
               - output.turn_off: red_output
           else:
+# EAN GEFUNDEN LED GRUEN AN UND WIEDER AUS
               - output.turn_on: green_output
               - switch.turn_on: beeper
               - delay: 50ms
