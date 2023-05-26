@@ -37,7 +37,7 @@ esphome:
       - output.turn_on: green_output        
       # - lambda: id(last_ean).publish_state("Bitte Scannen");
       - output.turn_off: green_output
-      // Print the string "Hello World!" at [0,10]
+      
                           
 dashboard_import:
   package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@main
