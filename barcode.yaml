@@ -156,16 +156,36 @@ display:
     address: "${ssd1306_i2c_address}"
     update_interval: 250ms
     pages:
+# --- HomePage  
       - id: page_home
         lambda: |-
-          it.print(0, 25, id(arial_font_16), "Bereit zum Scannen!");
+          it.print(0, 25, id(arial_font_14), "Bereit zum Scannen!");
+# --- Produkt gefunden          
       - id: page1
         lambda: |-
-          it.print(id(xpos_brand), 19, id(arial_font_16), id(last_brand).state.c_str());
-          it.print(id(xpos_prod), 40, id(arial_font_16), id(last_product).state.c_str());
+          it.print(id(xpos_brand), 19, id(arial_font), id(last_brand).state.c_str());
+          it.print(id(xpos_prod), 40, id(arial_font), id(last_product).state.c_str());
+          int x_start, y_start, height;
+          int brand_width, prod_width;
+          it.get_text_bounds(0, 0, id(last_brand).state.c_str(), id(arial_font), TextAlign::TOP_LEFT, &x_start, &y_start, &brand_width, &height);
+          it.get_text_bounds(0, 0, id(last_product).state.c_str(), id(arial_font), TextAlign::TOP_LEFT, &x_start, &y_start, &prod_width, &height);
+          
+          if (id(xpos_brand) > (-1*brand_width)-30 && brand_width>128) {
+            id(xpos_brand) -= 10;
+          } else {
+            id(xpos_brand) = 0;
+          }
+
+          int prod_len = strlen(id(last_product).state.c_str());
+          if (id(xpos_prod) > (-1*prod_width)-30 && prod_width>128) {
+            id(xpos_prod) -= 10;
+          } else {
+            id(xpos_prod) = 0;
+          }
+# --- Kein Produkt gefunden    
       - id: page2
         lambda: |-
-          it.print(0, 10, id(arial_font_16), "Kein Produkt gefunden");
+          it.print(0, 10, id(arial_font_14), "Kein Produkt gefunden");
       
       
       
