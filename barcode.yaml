@@ -39,10 +39,10 @@ esphome:
       #- output.turn_off: green_output
       - display.page.show: page_home
       - component.update: page_home
-      - delay: 500ms     
+      - delay: 10000ms     
       - display.page.show: page1
       - component.update: page1
-      - delay: 500ms    
+      - delay: 10000ms    
       - display.page.show: page2
       - component.update: page2
 dashboard_import:
