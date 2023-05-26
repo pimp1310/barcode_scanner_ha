@@ -40,7 +40,7 @@ esphome:
       // Print the string "Hello World!" at [0,10]
                           
 dashboard_import:
-  package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@test
+  package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@main
   import_full_config: false
 
 ota:
