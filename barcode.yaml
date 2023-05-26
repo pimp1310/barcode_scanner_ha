@@ -38,10 +38,7 @@ esphome:
       # - lambda: id(last_ean).publish_state("Bitte Scannen");
       #- output.turn_off: green_output
       - display.page.show: page_home
-      - delay: 10000ms     
-      - display.page.show: page1
-      - delay: 10000ms    
-      - display.page.show: page2
+      
 dashboard_import:
   package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@test
   import_full_config: false
@@ -128,6 +125,9 @@ uart:
 
 font:
   - file: "_fonts/arial.ttf"
+    id: arial_font_16
+    size: 16
+  - file: "_fonts/arial.ttf"
     id: arial_font_18
     size: 18
   - file: "_fonts/arial.ttf"
@@ -151,7 +151,7 @@ display:
     pages:
       - id: page_home
         lambda: |-
-          it.print(0, 10, id(arial_font_18), "This is page Home!");
+          it.print(0, 30, id(arial_font_16), "Bereit zum Scannen!");
       - id: page1
         lambda: |-
           it.print(0, 10, id(arial_font_18), "This is page 1!");
