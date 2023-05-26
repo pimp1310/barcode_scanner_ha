@@ -164,8 +164,8 @@ display:
 # --- HomePage  
       - id: page_home
         lambda: |-
-          it.image(40, 0, id(barcode_image));
-          it.print(0, 45, id(arial_font_14), "Bereit zum Scannen!");
+          it.image(20, 0, id(barcode_image));
+          it.print(0, 45, id(arial_font_14), "Bereit zum Scannen");
 # --- Produkt gefunden          
       - id: page1
         lambda: |-
