@@ -154,10 +154,10 @@ display:
           it.print(0, 25, id(arial_font_16), "Bereit zum Scannen!");
       - id: page1
         lambda: |-
-          it.print(0, 10, id(arial_font_18), "This is page 1!");
+          it.print(0, 10, id(arial_font_18), "Erfolgreicher SCAN!");
       - id: page2
         lambda: |-
-          it.print(0, 10, id(arial_font_18), "This is page 2!");
+          it.print(0, 10, id(arial_font_18), "Kein Produkt gefunden");
       
       
       
