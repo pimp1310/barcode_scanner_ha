@@ -270,8 +270,10 @@ script:
                 id: refreshProductNameOpenTin
                 ean: !lambda return ean.c_str();
             - output.turn_off: red_output
-            - lambda: |-
-                ESP_LOGD("getEanData", "OpenTinDb result: %s\n", id(last_product).state.c_str());
+           # - lambda: |-
+           #     ESP_LOGD("getEanData", "OpenTinDb result: %s\n", id(last_product).state.c_str());
+           # Neue Version => Gehe zu Page2 - Kein ergebnis gefunden
+            - display.page.show: page2
                 
 
       - if:
@@ -295,7 +297,9 @@ script:
               - output.turn_off: green_output
       - delay: 10s
       - script.execute: clearProductData
-      - lambda: id(last_ean).publish_state("Bitte Scannen");
+      # - lambda: id(last_ean).publish_state("Bitte Scannen");
+      # Neue Version => springt wieder auf Hauptseite
+      - display.page.show: page_home
 
 
   - id: clearProductData
