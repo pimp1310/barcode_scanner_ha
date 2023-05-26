@@ -37,7 +37,7 @@ esphome:
       - output.turn_on: green_output        
       # - lambda: id(last_ean).publish_state("Bitte Scannen");
       - output.turn_off: green_output
-      - display.page.show: default
+      - display.page.show: page_home
                           
 dashboard_import:
   package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@test
@@ -146,7 +146,7 @@ display:
     address: "${ssd1306_i2c_address}"
     update_interval: 250ms
     pages:
-      - id: default
+      - id: page_home
         lambda: id(last_ean).publish_state("Default");
       - id: page1
         lambda: id(last_ean).publish_state("Seite 1");
