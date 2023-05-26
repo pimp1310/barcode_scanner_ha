@@ -125,8 +125,15 @@ uart:
 
 font:
   - file: "_fonts/arial.ttf"
+    id: arial_font_14
+    size: 14
+    glyphs:  |
+      ß!?"%()+*=,-_.:°ø0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ abcdefghijklmnopqrstuvwxyzäüö€@<>/
+  - file: "_fonts/arial.ttf"
     id: arial_font_16
     size: 16
+    glyphs:  |
+      ß!?"%()+*=,-_.:°ø0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ abcdefghijklmnopqrstuvwxyzäüö€@<>/
   - file: "_fonts/arial.ttf"
     id: arial_font_18
     size: 18
