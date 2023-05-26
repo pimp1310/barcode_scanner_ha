@@ -272,8 +272,7 @@ script:
             - output.turn_off: red_output
            # - lambda: |-
            #     ESP_LOGD("getEanData", "OpenTinDb result: %s\n", id(last_product).state.c_str());
-           # Neue Version => Gehe zu Page2 - Kein ergebnis gefunden
-            - display.page.show: page2
+           
                 
 
       - if:
@@ -288,6 +287,8 @@ script:
               - delay: 800ms
               - switch.turn_off: beeper
               - output.turn_off: red_output
+              # Neue Version => Gehe zu Page2 - Kein ergebnis gefunden
+              - display.page.show: page2
           else:
 # EAN GEFUNDEN LED GRUEN AN UND WIEDER AUS
               - output.turn_on: green_output
@@ -295,11 +296,13 @@ script:
               - delay: 50ms
               - switch.turn_off: beeper
               - output.turn_off: green_output
+              # Neue Version => Gehe zu Page1 - Produkt gefunden
+              - display.page.show: page1
       - delay: 10s
       - script.execute: clearProductData
       # - lambda: id(last_ean).publish_state("Bitte Scannen");
-      # Neue Version => springt wieder auf Hauptseite
-      - display.page.show: page_home
+      
+      
 
 
   - id: clearProductData
@@ -308,6 +311,8 @@ script:
       - lambda: id(last_ean).publish_state("");
       - lambda: id(last_brand).publish_state("");
       - lambda: id(last_product).publish_state("");
+      # Neue Version => springt wieder auf Hauptseite
+      - display.page.show: page_home
       
   - id: refreshProductNameOpenTin
     mode: restart
