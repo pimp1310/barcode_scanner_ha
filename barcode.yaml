@@ -149,7 +149,12 @@ i2c:
   scan: false
   frequency: 400kHz
   id: i2c_bus
-
+  
+image:
+  - file: "barcode.jpg"
+    id: barcode_image
+    resize: 60x30
+    
 display:
   - platform: ssd1306_i2c
     model: "SH1106 128x64"
@@ -159,7 +164,8 @@ display:
 # --- HomePage  
       - id: page_home
         lambda: |-
-          it.print(0, 25, id(arial_font_14), "Bereit zum Scannen!");
+          it.image(0, 0, id(barcode_image));
+          it.print(0, 40, id(arial_font_14), "Bereit zum Scannen!");
 # --- Produkt gefunden          
       - id: page1
         lambda: |-
