@@ -38,13 +38,10 @@ esphome:
       # - lambda: id(last_ean).publish_state("Bitte Scannen");
       #- output.turn_off: green_output
       - display.page.show: page_home
-      - component.update: page_home
       - delay: 10000ms     
       - display.page.show: page1
-      - component.update: page1
       - delay: 10000ms    
       - display.page.show: page2
-      - component.update: page2
 dashboard_import:
   package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@test
   import_full_config: false
