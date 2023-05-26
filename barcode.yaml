@@ -146,12 +146,12 @@ display:
     address: "${ssd1306_i2c_address}"
     update_interval: 250ms
      pages:
+      - id: default
+        lambda: id(last_ean).publish_state("Default");
       - id: page1
         lambda: id(last_ean).publish_state("Seite 1");
       - id: page2
         lambda: id(last_ean).publish_state("Seite 2");
-      - id: page3
-        lambda: id(last_ean).publish_state("Seite 3");
       
       
       
