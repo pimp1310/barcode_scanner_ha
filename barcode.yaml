@@ -39,7 +39,7 @@ esphome:
       - output.turn_off: green_output
                                          
 dashboard_import:
-  package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@main
+  package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@test
   import_full_config: false
 
 ota:
