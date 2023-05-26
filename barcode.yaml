@@ -145,7 +145,7 @@ display:
     model: "SH1106 128x64"
     address: "${ssd1306_i2c_address}"
     update_interval: 250ms
-     pages:
+    pages:
       - id: default
         lambda: id(last_ean).publish_state("Default");
       - id: page1
