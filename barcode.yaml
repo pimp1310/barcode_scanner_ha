@@ -153,11 +153,14 @@ display:
     update_interval: 250ms
     pages:
       - id: page_home
-        lambda: id(last_ean).publish_state("Default");
+        lambda: |-
+          it.print(0, 10, id(arial_font_18), "This is page Home!");
       - id: page1
-        lambda: id(last_ean).publish_state("Seite 1");
+        lambda: |-
+          it.print(0, 10, id(arial_font_18), "This is page 1!");
       - id: page2
-        lambda: id(last_ean).publish_state("Seite 2");
+        lambda: |-
+          it.print(0, 10, id(arial_font_18), "This is page 2!");
       
       
       
