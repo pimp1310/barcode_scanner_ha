@@ -34,11 +34,14 @@ esphome:
   on_boot:
     then:
 # Beim Booten LED auf Gruen AN und dann wieder Aus
-      - output.turn_on: green_output        
+      #- output.turn_on: green_output        
       # - lambda: id(last_ean).publish_state("Bitte Scannen");
-      - output.turn_off: green_output
+      #- output.turn_off: green_output
       - display.page.show: page_home
-                          
+      - delay: 500ms     
+      - display.page.show: page1
+      - delay: 500ms    
+      - display.page.show: page2
 dashboard_import:
   package_import_url: github://pimp1310/barcode_scanner_ha/barcode.yaml@test
   import_full_config: false
