@@ -106,9 +106,7 @@ text_sensor:
 
 uart:
   id: uart_bus
-  # disabled logging 
-  # baud_rate: 9600
-  baud_rate: 0
+  baud_rate: 9600
   tx_pin: "${uart_tx_pin}"
   rx_pin: "${uart_rx_pin}"
   debug:
