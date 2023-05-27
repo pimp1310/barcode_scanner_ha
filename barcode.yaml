@@ -273,39 +273,26 @@ script:
                   id: last_product
                   state: ''
           then:
-            - output.turn_on: red_output
+# KEIN PRODUKT GEFUNDEN LED ROT AN UND WIEDER AUS          
             - script.execute: 
                 id: refreshProductNameOpenTin
                 ean: !lambda return ean.c_str();
+            - output.turn_on: red_output
+            - switch.turn_on: beeper
+            - delay: 800ms
+            - switch.turn_off: beeper
             - output.turn_off: red_output
-           # - lambda: |-
-           #     ESP_LOGD("getEanData", "OpenTinDb result: %s\n", id(last_product).state.c_str());
-           
-                
-
-      - if:
-          condition:
-            text_sensor.state:
-              id: last_product
-              state: 'null'
-          then:
-# EAN NICHT GEFUNDEN LED ROT AN UND WIEDER AUS
-              - output.turn_on: red_output
-              - switch.turn_on: beeper
-              - delay: 800ms
-              - switch.turn_off: beeper
-              - output.turn_off: red_output
-              # Neue Version => Gehe zu Page2 - Kein ergebnis gefunden
-              - display.page.show: page2
+            # Neue Version => Gehe zu Page2 - Kein ergebnis gefunden
+            - display.page.show: page2
           else:
 # EAN GEFUNDEN LED GRUEN AN UND WIEDER AUS
-              - output.turn_on: green_output
-              - switch.turn_on: beeper
-              - delay: 50ms
-              - switch.turn_off: beeper
-              - output.turn_off: green_output
-              # Neue Version => Gehe zu Page1 - Produkt gefunden
-              - display.page.show: page1
+            - output.turn_on: green_output
+            - switch.turn_on: beeper
+            - delay: 50ms
+            - switch.turn_off: beeper
+            - output.turn_off: green_output
+            # Neue Version => Gehe zu Page1 - Produkt gefunden
+            - display.page.show: page1               
       - delay: 10s
       - script.execute: clearProductData
       # - lambda: id(last_ean).publish_state("Bitte Scannen");
