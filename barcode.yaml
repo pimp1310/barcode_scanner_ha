@@ -30,7 +30,7 @@ esphome:
   name_add_mac_suffix: true
   project:
     name: smarthomeyourself.barcodescanner
-    version: "1.0"
+    version: "2.0"
   on_boot:
     then:
 # Beim Booten LED auf Gruen AN und dann wieder Aus
@@ -125,6 +125,11 @@ uart:
 
 font:
   - file: "_fonts/arial.ttf"
+    id: arial_font_13
+    size: 13
+    glyphs:  |
+      ß!?"%()+*=,-_.:°ø0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ abcdefghijklmnopqrstuvwxyzäüö€@<>/
+  - file: "_fonts/arial.ttf"
     id: arial_font_14
     size: 14
     glyphs:  |
@@ -154,7 +159,9 @@ image:
   - file: "barcode.jpg"
     id: barcode_image
     resize: 128x35
-    
+  - file: "no_result.jpg"
+    id: noresult_image
+    resize: 128x35  
 display:
   - platform: ssd1306_i2c
     model: "SH1106 128x64"
@@ -191,7 +198,8 @@ display:
 # --- Kein Produkt gefunden    
       - id: page2
         lambda: |-
-          it.print(0, 45, id(arial_font_14), "Kein Produkt gefunden");
+          it.image(30, 0, id(noresult_image));
+          it.print(0, 45, id(arial_font_13), "Kein Produkt gefunden");
       
       
       
@@ -293,7 +301,7 @@ script:
             - display.page.show: page1               
       - delay: 10s
       - script.execute: clearProductData
-      # - lambda: id(last_ean).publish_state("Bitte Scannen");
+     
       
       
 
