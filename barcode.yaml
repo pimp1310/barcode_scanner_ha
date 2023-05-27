@@ -191,7 +191,7 @@ display:
 # --- Kein Produkt gefunden    
       - id: page2
         lambda: |-
-          it.print(0, 10, id(arial_font_14), "Kein Produkt gefunden");
+          it.print(0, 45, id(arial_font_14), "Kein Produkt gefunden");
       
       
       
