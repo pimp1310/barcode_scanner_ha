@@ -125,6 +125,11 @@ uart:
 
 font:
   - file: "_fonts/arial.ttf"
+    id: arial_font_12
+    size: 12
+    glyphs:  |
+      ß!?"%()+*=,-_.:°ø0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÄÜÖ abcdefghijklmnopqrstuvwxyzäüö€@<>/
+  - file: "_fonts/arial.ttf"
     id: arial_font_13
     size: 13
     glyphs:  |
@@ -199,7 +204,7 @@ display:
       - id: page2
         lambda: |-
           it.image(50, 0, id(noresult_image));
-          it.print(0, 45, id(arial_font_13), "Kein Produkt gefunden");
+          it.print(0, 45, id(arial_font_12), "Kein Produkt gefunden");
       
       
       
