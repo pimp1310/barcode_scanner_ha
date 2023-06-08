@@ -159,7 +159,7 @@ image:
   - file: "barcode.jpg"
     id: barcode_image
     resize: 128x35
-  - file: "no_result.jpg"
+  - file: "no_result.gif"
     id: noresult_image
     resize: 128x35  
 display:
